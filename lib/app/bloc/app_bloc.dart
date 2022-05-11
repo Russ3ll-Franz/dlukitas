@@ -1,0 +1,47 @@
+import 'dart:async';
+
+import 'package:authentication_repository/authentication_repository.dart';
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+
+part 'app_event.dart';
+part 'app_state.dart';
+
+class AppBloc extends Bloc<AppEvent, AppState> {
+  AppBloc({
+    required AuthenticationRepository authenticationRepository,
+    required User user,
+  })  : _authenticationRepository = authenticationRepository,
+        super(
+          user.isEmpty
+              ? const AppState.unauthenticated()
+              : AppState.authenticated(user),
+        ) {
+    on<AppUserChanged>(_onAppUserChanged);
+    on<AppLogoutRequested>(_onLogoutRequested);
+    _userSubscription = _authenticationRepository.user.listen(
+      (user) => add(AppUserChanged(user)),
+    );
+  }
+
+  final AuthenticationRepository _authenticationRepository;
+  late final StreamSubscription<User> _userSubscription;
+
+  void _onAppUserChanged(AppUserChanged event, Emitter emit) {
+    emit(
+      event.user.isEmpty
+          ? const AppState.unauthenticated()
+          : AppState.authenticated(event.user),
+    );
+  }
+
+  void _onLogoutRequested(AppLogoutRequested event, Emitter emit) {
+    unawaited(_authenticationRepository.logOut());
+  }
+
+  @override
+  Future<void> close() {
+    _userSubscription.cancel();
+    return super.close();
+  }
+}

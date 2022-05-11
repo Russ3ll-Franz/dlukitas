@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1055204675285",
+    "project_id": "dlukitas-2337a",
+    "storage_bucket": "dlukitas-2337a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055204675285:android:5957777e60b25b840e5c5c",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.dlukitas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055204675285-5t2ehd5s532d92ga28ssbhpcevspugj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3-KotHjjw-5VdMR4Ih-OcKT5VPmTHZ-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055204675285-5t2ehd5s532d92ga28ssbhpcevspugj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

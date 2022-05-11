@@ -1,0 +1,49 @@
+name: dlukitas
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  authentication_repository:
+    path: package/authentication_repository
+  bloc: ^8.0.3
+  equatable: ^2.0.3
+  firebase_core: ^1.16.0
+  flow_builder: ^0.0.6
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.0.1
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+
+dev_dependencies:
+  bloc_test: ^9.0.3
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+  very_good_analysis: ^2.4.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: "Poppins"
+      fonts:
+        - asset: "assets/fonts/Poppins-Bold.ttf"
+          weight: 700
+        - asset: "assets/fonts/Poppins-SemiBold.ttf"
+          weight: 600
+        - asset: "assets/fonts/Poppins-Medium.ttf"
+          weight: 500
+        - asset: "assets/fonts/Poppins-Regular.ttf"
+          weight: 400
+        - asset: "assets/fonts/Poppins-Light.ttf"
+          weight: 300
