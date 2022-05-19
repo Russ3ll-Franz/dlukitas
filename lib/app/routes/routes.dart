@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 List<Page> onGenerateAppViewPages(AppStatus status, List<Page> pages) {
   if (status.isAuthenticated) {
-    /* return [CounterPage.page()]; */
+    return [];
   } else {
-    return [SplashPage.page()];
+    return [];
   }
 }
