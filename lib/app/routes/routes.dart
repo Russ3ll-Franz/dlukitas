@@ -5,6 +5,7 @@ List<Page> onGenerateAppViewPages(AppStatus status, List<Page> pages) {
   if (status.isAuthenticated) {
     /* return [CounterPage.page()]; */
   } else {
-    return [SplashPage.page()];
+/*     return [SplashPage.page()];
+ */
   }
 }
